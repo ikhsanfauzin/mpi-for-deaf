@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selamat! - Mak Nari</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #d4e9e2 30%, #ffffff 100%);
+            position: relative;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        /* Dekorasi Elemen Lingkaran */
+        .circle {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(63, 69, 81, 0.05);
+        }
+        .circle.one {
+            width: 300px;
+            height: 300px;
+            top: -100px;
+            left: -100px;
+        }
+        .circle.two {
+            width: 200px;
+            height: 200px;
+            top: 50px;
+            right: -100px;
+        }
+        .circle.three {
+            width: 400px;
+            height: 400px;
+            bottom: -150px;
+            left: -150px;
+        }
+
+        /* Animasi Perayaan */
+        .celebration {
+            z-index: 1;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .celebration img {
+            width: 200px;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-30px);
+            }
+            60% {
+                transform: translateY(-15px);
+            }
+        }
+
+        h1 {
+            color: #3c3a72;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.5em;
+            color: #555555;
+            margin-bottom: 40px;
+        }
+
+        /* Tombol untuk kembali ke halaman utama */
+        .btn-home {
+            background-color: #87c38f;
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-home:hover {
+            background-color: #6ba96e;
+        }
+
+        /* CSS untuk hujan pita */
+        .confetti {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        .confetti-piece {
+            position: absolute;
+            width: 10px;
+            height: 30px;
+            background-color: randomColor;
+            animation: fall 3s linear infinite;
+            opacity: 0.7;
+        }
+
+        /* Animasi jatuh untuk pita */
+        @keyframes fall {
+            0% {
+                transform: translateY(-100vh) rotate(0deg);
+            }
+            100% {
+                transform: translateY(100vh) rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Elemen Lingkaran untuk Background -->
+    <div class="circle one"></div>
+    <div class="circle two"></div>
+    <div class="circle three"></div>
+
+    <!-- Hujan Pita -->
+    <div class="confetti" id="confetti-container"></div>
+
+    <!-- Audio Tepuk Tangan -->
+<audio id="clap-sound" autoplay>
+    <source src="audio/clap.mp3" type="audio/mp3">
+    Your browser does not support the audio element.
+</audio>
+
+    <!-- Konten Perayaan -->
+    <div class="celebration">
+        <h1>Selamat! Kamu Telah Menyelesaikan Semua Soal!</h1>
+        <img src="picture/celebrate.png" alt="Animasi Ulang Tahun">
+        <p>Terima kasih telah berpartisipasi!</p>
+        <!-- Tombol kembali ke halaman utama -->
+        <a href="/MAK_NARI/" class="btn-home">Kembali ke Halaman Utama</a>
+    </div>
+
+    <script>
+        // Fungsi untuk mendapatkan warna acak
+        function getRandomColor() {
+            const colors = ['#ff0a54', '#ff477e', '#ff7096', '#ff85a1', '#ff4d00', '#ffac41', '#00c2cb', '#72efdd', '#06d6a0'];
+            return colors[Math.floor(Math.random() * colors.length)];
+        }
+
+        // Fungsi untuk membuat pita
+        function createConfettiPiece() {
+            const confetti = document.createElement('div');
+            confetti.classList.add('confetti-piece');
+            confetti.style.left = `${Math.random() * 100}vw`;
+            confetti.style.backgroundColor = getRandomColor();
+            confetti.style.animationDuration = `${Math.random() * 3 + 2}s`; // Acak durasi animasi
+            confetti.style.opacity = Math.random() + 0.5; // Acak transparansi
+            confetti.style.transform = `rotate(${Math.random() * 360}deg)`;
+            return confetti;
+        }
+
+        // Menambahkan pita ke halaman
+        function startConfetti() {
+            const confettiContainer = document.getElementById('confetti-container');
+            for (let i = 0; i < 150; i++) {
+                const confettiPiece = createConfettiPiece();
+                confettiContainer.appendChild(confettiPiece);
+            }
+        }
+
+        // Memulai hujan pita saat halaman dimuat
+        window.onload = startConfetti;
+    </script>
+
+</body>
+</html>

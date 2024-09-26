@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Pertanyaan 3 - Mak Nari</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #d4e9e2 30%, #ffffff 100%);
+            position: relative;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Dekorasi Elemen Lingkaran */
+        .circle {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(63, 69, 81, 0.05);
+        }
+        .circle.one {
+            width: 300px;
+            height: 300px;
+            top: -100px;
+            left: -100px;
+        }
+        .circle.two {
+            width: 200px;
+            height: 200px;
+            top: 50px;
+            right: -100px;
+        }
+        .circle.three {
+            width: 400px;
+            height: 400px;
+            bottom: -150px;
+            left: -150px;
+        }
+
+        .quiz-container {
+            text-align: center;
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+            max-width: 700px;
+            width: 100%;
+            z-index: 1;
+        }
+
+        /* Styling untuk logo Tutwuri */
+        .header-logo {
+            width: 100px; /* Ukuran logo disesuaikan dengan halaman quizpage */
+            margin-bottom: 20px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        h1 {
+            color: #3c3a72;
+            margin-bottom: 20px;
+        }
+
+        p {
+            color: #555555;
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+
+        /* Styling Video */
+        video {
+            width: 50%; /* Ukuran video diperkecil menjadi 50% dari container */
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+            margin-bottom: 20px;
+        }
+
+        .choices {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .choices a {
+            display: inline-block;
+            text-align: center;
+            padding: 15px;
+            width: 100%;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            color: white;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-choice {
+            background-color: #87c38f;
+        }
+
+        .btn-choice:hover {
+            background-color: #6ba96e;
+        }
+
+        .btn-choice.wrong {
+            background-color: #d9534f;
+        }
+
+        .btn-choice.wrong:hover {
+            background-color: #c9302c;
+        }
+
+        /* Tombol Home */
+        .home-button {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+        }
+        .home-button img {
+            width: 100%;
+            border-radius: 50%;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+    </style>
+</head>
+<body>
+
+    <!-- Elemen Lingkaran untuk Background -->
+    <div class="circle one"></div>
+    <div class="circle two"></div>
+    <div class="circle three"></div>
+
+    <!-- Tombol Home -->
+    <a href="/MAK_NARI/" class="home-button">
+        <img src="picture/home.png" alt="Tombol Home">
+    </a>
+
+    <!-- Tombol Back -->
+    <a href="/MAK_NARI/quiz/quiz_2.html" class="back-button">
+        <img src="picture/back.png" alt="Tombol Back" style="width: 60px; position: absolute; top: 20px; left: 20px;">
+    </a>
+
+    <div class="quiz-container">
+        <!-- Menambahkan logo Tut Wuri Handayani di atas judul -->
+        <img src="picture/tutwuri.png" alt="Logo Tutwuri" class="header-logo">
+        <h1>Quiz Pertanyaan 3</h1>
+        <p>Simak video berikut ini, kemudian pilih jawaban yang benar.</p>
+
+        <!-- Video tentang hari Jumat -->
+        <video controls>
+            <source src="video/Jumat.mp4" type="video/mp4">
+            Video tidak didukung.
+        </video>
+
+        <!-- Pilihan Jawaban -->
+        <div class="choices">
+            <a href="salah.html?soal=3" class="btn-choice">Sabtu</a>
+            <a href="finish.html" class="btn-choice">Minggu</a>
+        </div>
+    </div>
+
+</body>
+
+</html>

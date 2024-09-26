@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tujuan Pembelajaran dan Sasaran Peserta Didik</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #d4e9e2 30%, #ffffff 100%);
+            position: relative;
+            overflow: hidden; /* Untuk memastikan elemen background tetap dalam halaman */
+        }
+
+        /* Dekorasi Elemen Lingkaran */
+        .circle {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(63, 69, 81, 0.05);
+        }
+        .circle.one {
+            width: 300px;
+            height: 300px;
+            top: -100px;
+            left: -100px;
+        }
+        .circle.two {
+            width: 200px;
+            height: 200px;
+            top: 50px;
+            right: -100px;
+        }
+        .circle.three {
+            width: 400px;
+            height: 400px;
+            bottom: -150px;
+            left: -150px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+            position: relative; /* Untuk memastikan container berada di atas elemen background */
+            z-index: 1;
+        }
+        .header {
+            padding: 20px;
+        }
+        .header img {
+            width: 100px;
+            display: inline-block;
+        }
+        .header h1 {
+            font-size: 3em;
+            color: #3c3a72;
+            margin: 0;
+        }
+        .content {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 40px;
+        }
+        .content-left {
+            width: 40%;
+        }
+        .content-left img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .content-right {
+            width: 50%;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: left;
+            background-color: #fff8e1;
+        }
+        .content-right h2 {
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            color: #333;
+            text-align: center;
+        }
+        .content-right p {
+            font-size: 1.2em;
+            color: #333;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        .content-right p.title {
+            font-weight: bold;
+            font-size: 1.5em;
+            margin-top: 10px;
+            text-align: center;
+        }
+        /* Posisi Tombol Home */
+        .home-button {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+        }
+        .home-button img {
+            width: 100%;
+            border-radius: 50%;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+                /* Tombol Home */
+        .home-button {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+        }
+        .home-button img {
+            width: 100%;
+            border-radius: 50%;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        footer {
+            text-align: center;
+            background-color: #f4f4f4;
+            padding: 20px;
+            width: 100%;
+            position: relative;
+            bottom: 0;
+        }
+        footer p {
+            color: #3c3a72;
+            margin-top: 10px;
+        }
+        
+    </style>
+</head>
+<body>
+
+    <!-- Elemen Lingkaran untuk Background -->
+    <div class="circle one"></div>
+    <div class="circle two"></div>
+    <div class="circle three"></div>
+
+    <!-- Audio Backsound -->
+    <audio id="backsound" autoplay loop>
+        <source src="music/backsound.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <div class="container">
+        <!-- Header Section -->
+        <div class="header">
+            <img src="picture/tutwuri.png" alt="Logo TUT WURI HANDAYANI">
+            <h1>Tujuan Pembelajaran dan Sasaran Peserta Didik</h1>
+        </div>
+
+        <!-- Content Section -->
+        <div class="content">
+            <!-- Karakter Bahasa Isyarat di sisi kiri -->
+            <div class="content-left">
+                <img src="picture/sign_language_character.png" alt="Karakter Bahasa Isyarat">
+            </div>
+
+            <!-- Tujuan Pembelajaran dan Sasaran Peserta Didik di sisi kanan -->
+            <div class="content-right">
+                <h2>Tujuan Pembelajaran</h2>
+                <p>
+                    Peserta didik mampu mengenal nama-nama hari menggunakan bahasa isyarat dan oral.
+                </p>
+
+                <p class="title">Sasaran Peserta Didik</p>
+                <p>
+                    Sasaran dari Program Khusus PKPBI ini adalah untuk peserta didik dengan disabilitas pendengaran yang memiliki tingkat pendengaran 60 - 110 dB.
+                </p>
+            </div>
+        </div>
+
+        <!-- Tombol Home dipindahkan ke kanan atas -->
+        <a href="index.html" class="home-button">
+            <img src="picture/home.png" alt="Tombol Home">
+        </a>
+    </div>
+
+    <!-- Footer dengan gambar rumput -->
+    <footer>
+        <p>Mata Pelajaran Program Khusus PKPBI (Pengembangan Komunikasi Persepsi Bunyi dan Irama)</p>
+        <p>Untuk Peserta Didik Disabilitas Pendengaran</p>
+        <p>&copy; 2024 Indriyati Siti Salamah, M.Pd.</p>
+    </footer>
+
+</body>
+</html>

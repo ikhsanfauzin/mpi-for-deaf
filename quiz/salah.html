@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jawaban Salah - Mak Nari</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #d9534f 30%, #ffffff 100%);
+            position: relative;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .error {
+            z-index: 1;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .error img {
+            width: 150px;
+            animation: shake 1s infinite;
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            10%, 30%, 50%, 70%, 90% { transform: translateX(-10px); }
+            20%, 40%, 60%, 80% { transform: translateX(10px); }
+        }
+
+        h1 {
+            color: #ffffff;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.5em;
+            color: #ffffff;
+            margin-bottom: 40px;
+        }
+
+        .btn-retry {
+            background-color: #ffffff;
+            color: #d9534f;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-retry:hover {
+            background-color: #f7f7f7;
+        }
+
+        /* Dekorasi Elemen Lingkaran */
+        .circle {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(63, 69, 81, 0.05);
+        }
+        .circle.one {
+            width: 300px;
+            height: 300px;
+            top: -100px;
+            left: -100px;
+        }
+        .circle.two {
+            width: 200px;
+            height: 200px;
+            top: 50px;
+            right: -100px;
+        }
+        .circle.three {
+            width: 400px;
+            height: 400px;
+            bottom: -150px;
+            left: -150px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Elemen Lingkaran untuk Background -->
+    <div class="circle one"></div>
+    <div class="circle two"></div>
+    <div class="circle three"></div>
+
+    <!-- Audio Beep -->
+    <audio id="beep-sound" autoplay>
+        <source src="audio/beep.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+
+    <div class="error">
+        <h1>Jawaban Kamu Salah</h1>
+        <img src="picture/wrong.png" alt="Tanda Salah">
+        <p>Coba lagi ya!</p>
+        <a href="#" id="retry-btn" class="btn-retry">Kembali ke Soal</a>
+    </div>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const currentSoal = urlParams.get('soal') || 1; 
+
+        const retryBtn = document.getElementById('retry-btn');
+        retryBtn.href = `/MAK_NARI/quiz/quiz_${currentSoal}.html?soal=${currentSoal}`;
+    </script>
+
+</body>
+</html>
